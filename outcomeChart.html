@@ -20,10 +20,10 @@ $.getJSON("outcome_data.json", function(data_from_file){
         data: {
             labels: ['NA', 'Warning','Citation','Arrest'],
             datasets: [{
-                label: 'Fake data',
+                label: 'Data',
                 backgroundColor: 'rgb(255, 99, 132)',
                 borderColor: 'rgb(255, 99, 132)',
-                data: [data_from_file["x"], data_from_file["y"]],
+                data: [data_from_file["NA"], data_from_file["Warning"],data_from_file["Citation"],data_from_file["Arrest"] ],
             }]
         },
 
