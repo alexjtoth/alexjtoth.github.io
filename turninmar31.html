@@ -8,7 +8,7 @@
 
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/reset.min.css">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/reveal.min.css">
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/theme/black.min.css" id="theme">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/theme/white.min.css" id="theme">
 
 		<!-- Theme used for syntax highlighted code -->
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/plugin/highlight/monokai.min.css" id="highlight-theme">
@@ -45,7 +45,7 @@
 
 					<section>
 						<h3>Animating code blocks</h3>
-						<pre><code data-trim data-line-numbers=1,5|2-4|2|3|4><script type="text/template">
+						<pre><code data-trim data-line-numbers=1|2|3|2-3|1-3><script type="text/template">
 								def addition(a,b):
 							          sum = a + b
 						           return sum
@@ -73,7 +73,18 @@
 					<h3>Images</h3>
 					<p>How do we add images to our presentation?</p>
 					<img src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg">
-				</section>		
+				</section>	
+
+				<section>
+					<h3>CODE BLOCK</h3>
+					<p> How to change theme </p>
+					<p>In line 11 of this code, we can change the theme by replacing the color there. </p>
+					<pre> <code data-trim data-noescape>
+					href=..."ajax/libs/reveal.js/4.1.0/theme/black.min.css" id="theme"> 
+
+					href=..."ajax/libs/reveal.js/4.1.0/theme/white.min.css" id="theme"> 
+					</code></pre>
+				</section>
 			</div>
 		</div>
 
