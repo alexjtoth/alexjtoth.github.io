@@ -18,142 +18,99 @@
 			<div class="slides">
 				<section>
 					<h3>Weekly Assignment #10</h3>
-					<p style="color:#FBB917; font-weight:bold;">Alex Toth</p>
-					<p> April 2nd, 2021</h5>
+					<p style="color:#FBB917; font-weight:bold;"> April 2nd, 2021</h5>
 				</section>
 
 				<section>
 					<h3>Introduction</h3>
-					<p style="color:#FBB917;"> In this slideshow, I will present how to add a functioning ____ with steps.</p>
+					<p style="color:#FBB917;"> In this slideshow, I will present how to add codeblocks to a reveal.js presentation with animated steps.</p>
+					<img src="https://revealjs.com/images/meta/reveal-og-card-1200-630.png">
 				</section>
 
 				<section>
-					<h3>Motivation</h3>
-					<p style="color:#FBB917;"> In this slideshow, I will present how to add a functioning ____ with steps.</p>
-				</section>
-
-				<section>
-					<h3>Statement of Problem</h3>
-					<p style="color:#FBB917;"> In this slideshow, I will present how to add a functioning ____ with steps.</p>
+					<h3>Motivation/Statement of Problem</h3>
+					<p style="color:#FBB917;"> This is a very organized way to highlight certain things in your codeblocks. This will help animate your presentation and make it more interactive by showing each step. This will help make presentations look more professional. </p>
 				</section>
 				
 				<section>
 					<h3>Steps</h3>
-					<p style="color:#FBB917;"> In this slideshow, I will present how to add a functioning ____ with steps.</p>
+					<p style="color:#FBB917;"> We first want to start with a codeblock. Here is an example</p>
+					<pre><code data-trim data-line-numbers=><script type="text/template">
+							This block can contain code! 
+							def addition(a,b):
+							          sum = a + b
+						        return sum
+							</script></pre></code>
+						</code></pre>
+				</section>
+
+				<section>
+					<h3>Steps</h3>
+					<p style="color:#FBB917;"> How did we make it? The code in the codeblock is how we did it.</p>
+				<pre><code data-trim data-line-numbers><script type="text/template">
+							<section>
+								<pre><code data-trim data-line-numbers>
+									This block can contain code! 
+									def addition(a,b):
+							          		sum = a + b
+						           	  return sum
+						    	</code></pre>
+						   <section>
+							</script></pre></code>
+						</code></pre>
+
+				</section>
+
+				<section>
+					<h3>Steps</h3>
+					<p style="color:#FBB917;"> Now that we have the codeblock, how can we animate the code inside of it? Try clicking through this slide.</p>
+					<pre><code data-trim data-line-numbers=1|2|3|4|5|6|7|8|1,8|2,7|3|4-6><script type="text/template">
+							<section>
+								<pre><code data-trim data-line-numbers=1|2|3|4|5|6|7|8|1-4|5-8|1-8>
+									This block can contain code! 
+										def addition(a,b):
+							          			sum = a + b
+						           		  return sum
+						    	</code></pre>
+						   <section>
+							</script></pre></code>
+						</code></pre>
+				</section>
+
+				<section>
+					<h3>Steps</h3>
+					<p style="color:#FBB917;"> We are going to take a look at one line in particular in order to animate the code in the codeblock. That line is below.</p>
+					<pre><code data-trim data-line-numbers><script type="text/template">
+							data-trim data-line-numbers=1|2|3|4|5|6|7|8|1,8|2,7|3|4-6
+							</script></pre></code>
+						</code></pre>
+					<p style="color:#FBB917;"> We can see that each individual | represents another action in the animation. As you click through, the slides that have been indicated in order, will appear animated.</p>
+				</section>
+
+				<section>
+					<h3>Steps</h3>
+					<pre><code data-trim data-line-numbers=1|2|3|4|5|6|7|8|1,8|2,7|3|4-6><script type="text/template">
+							<section>
+								<pre><code data-trim data-line-numbers=1|2|3|4|5|6|7|8|1,8|2,7|3|4-6>
+									This block can contain code! 
+									def addition(a,b):
+							          		sum = a + b
+						           	  return sum
+						    	</code></pre>
+						   <section>
+							</script></pre></code>
+						</code></pre>
+						<p style="color:#FBB917;"> 1,2,3,4,5,6,7,8, 1 and 8, 2 and 7, 3, and 4 through 6 </p>
+				</section>
+
+				<section>
+					<h3>Steps</h3>
+					<p style="color:#FBB917;"> When trying to change how much of the codeblock you want animated, there are many ways to do this. When a singular number is split up with | in the code, only that line of code will appear animated. When the line numbers are separated by commas, it means those two lines will be animated. And last, when there is a dash between two line numbers, that means all the lines between those two numbers will appear animated.</p>
 				</section>
 
 				<section>
 					<h3>Conclusion</h3>
-					<p style="color:#FBB917;">Links to next steps. Sources, resources?</p>
-				</section>
-
-				<!-- Vertical slides for each topic -->
-				<section>
-					<section>
-						<h3>Animating code blocks</h3>
-						<p>How do we add <a href="https://revealjs.com/code/">animations</a> to code blocks?</p>
-						<p>(Easy)</p>
-					</section>	
-
-					<section>
-						<h3>Animating code blocks</h3>
-						<pre><code data-trim data-line-numbers=1,5|2-4|2|3|4><script type="text/template">
-							<pre><code data-trim data-line-numbers=1,5|2-4|2|3|4>
-								def addition(a,b):
-							          sum = a + b
-						           return sum
-						    </code></pre>
-							</script></pre></code>
-						</code></pre>
-					</section>
-
-				</section>
-
-				<section>
-					<section>
-						<h3>Vertical slides</h3>
-						<p>How do we make <a href="https://revealjs.com/vertical-slides/">vertical slides</a>?<p>
-						<p>(Easy)</p>
-					</section>
-
-					<section>
-						<h3>Vertical slides</h3>
-						<pre><code data-trim data-line-numbers=1,6|2,5|3|4><script type="text/template">
-							<section>Horizontal Slide</section>
-								<section>
-								  <section>Vertical Slide 1</section>
-								  <section>Vertical Slide 2</section>
-								</section>
-							</section>
-						</script></code></pre>
-					</section>
-
-					<section>
-						<h3>Vertical slides</h3>
-						<p>What does this look like in the <a href="https://revealjs.com/overview/">Overview mode</a>?</p>
-						<p>Press ESC</p>
-					</section>
-
-				</section>
-
-				<section>
-					<h3>Daily Participation</h3>
-					<ol>
-						<li><a href="https://github.com/brianckeegan/brianckeegan.github.io/blob/master/week12.html">Download this Reveal.js presentation</a></li>	
-						<li>Join a Hack & Tell breakout room</li>
-						<li>15 minutes to implement within file</li>
-						<li>Group share-out at end of class</li>
-						<li><a href="https://canvas.colorado.edu/courses/70121/assignments/1020972">Submit revised file to Canvas</a></li>
-					</ol>
-					
-				</section>
-
-				<section>
-					<h3>Hack & Tell Breakouts</h3>
-					<p>2 breakout rooms for each topic</p>
-					<p>~6-8 students per room</p>
-					<ul>
-						<li>Slide numbers</li>
-						<li>Themes</li>
-						<li>Notes</li>
-						<li>Math</li>
-					</ul>
-					<p>Have a basic example of how to implement</p>
-					<p>Share example to GitHub Pages</p>
-				</section>
-
-				<section>
-
-					<section>
-						<h3>Slide numbers</h3>
-						<p>How do we add <a href="https://revealjs.com/slide-numbers/">slide numbers</a>?</p>
-						<p>(Easy)</p>
-					</section>
-
-				</section>
-
-				<section>
-					<section>
-						<h3>Themes</h3>
-						<p>How do we change the <a href="https://revealjs.com/themes/">theme</a>?</p>
-						<p>(Easy)</p>
-					</section>
-				</section>
-
-				<section>
-					<section>
-						<h3>Notes</h3>
-						<p>How do we add <a href="https://revealjs.com/speaker-view/">speaker notes</a>?</p>
-						<p>(Easy-Medium)</p>
-					</section>
-				</section>
-
-				<section>
-					<section>
-						<h3>Math</h3>
-						<p>How do we add <a href="https://revealjs.com/math/">math</a>?</p>
-						<p>(Medium)</p>
-					</section>
+					<p style="color:#FBB917;">Where do we go from here? Well there are even more ways you can customize your animations on reveal.js. Take a look at this <a href="https://revealjs.com/code/">link</a> for more resources on this topic. For more info on animations in general, check this <a href="https://revealjs.com/auto-animate/">link</a> out.</p>
 				</section>
 
 			</div>
