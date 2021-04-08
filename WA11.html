@@ -37,8 +37,8 @@
 			"$schema": "https://vega.github.io/schema/vega-lite/v4.json",
   "config": {
     "view": {
-      "continuousHeight": 600,
-      "continuousWidth": 800
+      "continuousHeight": 400,
+      "continuousWidth": 600
     }
   },
   "data": {
@@ -68,6 +68,60 @@
 				<section>
 					<p>This relationship is interesting because it is non-linear</p>
 					<p>Fuel efficiency drops rapidly with the increase in horsepower</p>
+				</section>
+
+				<section>
+					<p>Here we have the basic code that is needed to create a Vega Visualization. You need to add script tags into the < head> portion of the doc. From there you will add the code contained in the < body> into a slide in your presentation.</p>
+					<pre><code class="html" data-trim data-line-numbers=1,2,16|3-7|4-6|8-15|11|12|9,13><script type="text/template">
+							<!DOCTYPE html>
+							<html>
+							<head>
+								<script src="https://cdn.jsdelivr.net/npm/vega@3">< /script>
+								<script src="https://cdn.jsdelivr.net/npm/vega-lite@2">< /script>
+								<script src="https://cdn.jsdelivr.net/npm/vega-embed@3">< /script>
+							</head>
+							<body>
+								<div id="vis"></div>
+								<script type="text/javascript">
+									var spec = {};  /* JSON dump of your chart's spec */
+									var opt = {"renderer": "canvas", "actions": false};  /* Options for the embedding */
+									vegaEmbed("#vis", spec, opt);
+								< /script>
+							</body>
+							</html>
+						</script></code></pre>
+				</section>
+
+				<section>
+					<p>This is what you will need to input into var spec{}</p>
+					<pre><code data-trim class='js' data-line-numbers=1|2-7|8-10|11-15|16-19|20-24|25-26>
+							"$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  							"config": {
+   								 "view": {
+      									"continuousHeight": 600,
+      									"continuousWidth": 800
+    										}
+  										},
+  							"data": {
+    							"url": "https://vega.github.io/vega-datasets/data/cars.json"
+  								},
+  							"encoding": {
+    							"color": {
+     								 "field": "Origin",
+      								 "type": "nominal"
+    								},
+   							 "x": {
+      							"field": "Weight_in_lbs",
+      							"type": "quantitative"
+    							},
+    						"y": {
+      							"field": "Miles_per_Gallon",
+      							"type": "quantitative"
+    							}
+  							},
+  						"mark": "point"
+						};
+						</code></pre>
 				</section>
 			</div>
 		</div>
