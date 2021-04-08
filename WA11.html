@@ -26,11 +26,7 @@
 				</section>
 
 				<section>
-					<p>Internal combustion engines face a fundamental engineering trade-off</p>
-					<p>More powerful engines are also less fuel efficient.</p>
-				</section>
-
-				<section>
+					<h2>Car Dataset</h2>
 					<div id="vis"></div>
 					<script type="text/javascript">
 						var spec = {
@@ -63,11 +59,7 @@
 						var opt = {"renderer": "canvas", "actions": false};  /* Options for the embedding */
 						vegaEmbed("#vis", spec, opt);
 					</script>
-				</section>
-
-				<section>
-					<p>This relationship is interesting because it is non-linear</p>
-					<p>Fuel efficiency drops rapidly with the increase in horsepower</p>
+					<p> As we take a look at the visualization, we see that cars that weigh more usually have lower miles per gallon. The majority of these heavier cars are from the United States, shown in red.</p>
 				</section>
 
 				<section>
@@ -93,7 +85,7 @@
 				</section>
 
 				<section>
-					<p>This is what you will need to input into var spec{}</p>
+					<p>This is what you will need to input into var spec{}. As you can see in the "data" tag, we have added <a href="https://vega.github.io/vega-datasets/data/cars.json">a link</a> to the dataset so we can pull the data.</p>
 					<pre><code data-trim class='js' data-line-numbers=1|2-7|8-10|11-15|16-19|20-24|25-26>
 							"$schema": "https://vega.github.io/schema/vega-lite/v4.json",
   							"config": {
@@ -123,7 +115,44 @@
 						};
 						</code></pre>
 				</section>
-			</div>
+
+				<section>
+					<h2>Penguin Dataset</h2>
+					<div id="abc"></div>
+					<script type="text/javascript">
+						var spec = {
+			"$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "config": {
+    "view": {
+      "continuousHeight": 400,
+      "continuousWidth": 600
+    }
+  },
+  "data": {
+    "url": "https://vega.github.io/vega-datasets/data/penguins.json"
+  },
+  "encoding": {
+    "color": {
+      "field": "Species",
+      "type": "nominal"
+    },
+    "x": {
+      "field": "Flipper Length (mm)",
+      "type": "quantitative"
+    },
+    "y": {
+      "field": "Body Mass (g)",
+      "type": "quantitative"
+    }
+  },
+  "mark": "bar"
+};  
+var opt = {"renderer": "canvas", "actions": false};  /* Options for the embedding */
+						vegaEmbed("#abc", spec, opt);
+					</script>
+					<p> We can see how the different types of penguins are distributed. We see that Gentoo Penguins usually weigh the most and have the longest flippers. This means they are most likely the largest type of penguin in this dataset.</p>
+				</section>
+
 		</div>
 
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/reveal.js"></script>
