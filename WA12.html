@@ -117,111 +117,70 @@
 
 				<section>
 					<section>
-						<h2>In-class Exercise 2</h2>
-						<p>Use the "<a href="https://github.com/vega/vega-datasets/blob/master/data/crimea.json" target="_blank" rel="noopener noreferrer">crimea.json</a>" data to make a bar plot:</p>
-						<ul>
-							<li>x-axis: "date"</li>
-							<li>y-axis: "wounds"</li>
-						</ul>
+						<h2>Visualization #2</h2>
+						<p></p>
 					</section>
 
 
 					<section>
-					<h2>In-class Exercise 2</h2>
-						<p>Your visualization goes here!</p>
-					<div id="crimea-bars"></div>
-						
+					<h2>Visualization #2</h2>
+					<div id="vis-bar-penguin"></div>
 						<script type="text/javascript">
 						var spec = {
-							"width": 600,
-							"height": 400,
+							"width": 300,
+							"height": 200,
 							"data": {
-								"url": "https://vega.github.io/vega-datasets/data/crimea.json"
+								"url": "https://vega.github.io/vega-datasets/data/penguins.json"
 							},
-							"mark": {
-								"type": "bar",
-								"color": "orange"
-							}, 
+							"mark": "bar",
 							"encoding": {
 								"x": {
-									"field":"date",
-									"type":"temporal",
+									"field": "Species",
 									"axis":{
-										"labelFontSize":25
-									}
+										"labelColor": "blue"
+									},
 								},
 								"y": {
-									"field":"wounds",
-									"type":"quantitative", 
-									"axis": {
-										"labelFontSize":25
+									"aggregate": "count", 
+									"title": "Number of Penguins",
+									"axis":{
+										"labelColor": "red",
 									}
-								},
-
+								}
 							}
 						};
 						var opt = {"renderer": "canvas", "actions": false};
-						vegaEmbed("#crimea-bars", spec, opt);
+						vegaEmbed("#vis-bar-penguin", spec, opt);
 						</script>
 					</section>
-				</section>
 
-				<section>
 					<section>
-						<h2>In-class Exercise 3</h2>
-						<p>Use the "<a href="https://github.com/vega/vega-datasets/blob/master/data/penguins.json" target="_blank" rel="noopener noreferrer">penguins.json</a>" data to make a scatterplot:</p>
-						<ul>
-							<li>x-axis: "Flipper length (mm)"</li>
-							<li>y-axis: "Body Mass (g)"</li>
-							<li>color: "Species"</li>
-							<li>shape: "Sex"</li>
-						</ul>
-						<p>See <a href="https://vega.github.io/vega-lite/examples/point_color_with_shape.html" target="_blank" rel="noopener noreferrer">this example</a> for guidance.</p>
+						<h2>Interpretation of Visualization #2</h2>
+						<p> We counted up the amount of penguins that belongs to each species. This was just so we could get a better sense of the amount of penguins in the scatterplot. We see that Adelie penguins are most common in this dataset, followed by the largest physical penguins, Gentoo, followed by the Chinstrap.</p>
 					</section>
-					
+
 					<section>
-						<h2>In-class Exercise 3</h2>
-						<div id="lol"></div>
-					<script type="text/javascript">
-						var spec = {
-  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "config": {
-  	"font": "Times New Roman",
-    "view": {
-      "continuousHeight": 500,
-      "continuousWidth": 1000
-    },
-  },
-  "data": {
-    "url": "https://vega.github.io/vega-datasets/data/penguins.json"
-  },
-  "mark": "point",
-  "encoding": {
-    "x": {
-      "field": "Flipper Length (mm)",
-      "type": "quantitative",
-      "scale": {"zero": false},
-      "axis":{
-			"titleColor": "red",
-			"titleFontSize": 25,
-		},
-    },
-    "y": {
-      "field": "Body Mass (g)",
-      "type": "quantitative",
-      "scale": {"zero": false},
-      "axis":{
-			"titleColor": "red",
-			"titleFontSize": 25,
-		},
-    },
-    "color": {"field": "Species", "type": "nominal"},
-    "shape": {"field": "Species", "type": "nominal"}
-  }
-};
-						var opt = {"renderer": "canvas", "actions": false};  /* Options for the embedding */
-						vegaEmbed("#lol", spec, opt);
-					</script>
+						<h2>How do we layer in vega visualizations?</h2>
+						<pre><code class="html" data-trim data-line-numbers=1-17|3-8|10-16|1-17><script type="text/template">
+"mark": "bar",
+"encoding": {
+	"x": {
+		"field": "Species",
+		"axis": {
+			"labelColor": "blue"
+			},
+		  },
+		}
+	"y": {
+		"aggregate": "count", 
+		"title": "Number of Penguins",
+		"axis":{
+			"labelColor": "red",
+				}
+		 }
+	}
+						</script></code></pre>
+
 					</section>
 				</section>
 
