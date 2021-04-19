@@ -1,0 +1,245 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Weekly Assignment #12</title>
+
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/reset.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/reveal.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/theme/beige.min.css" id="theme">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/plugin/highlight/monokai.min.css" id="highlight-theme">
+
+		<!-- Loading Vega-->
+		<script src="https://cdn.jsdelivr.net/npm/vega@5.19.1"></script>
+		<script src="https://cdn.jsdelivr.net/npm/vega-lite@5.0.0"></script>
+		<script src="https://cdn.jsdelivr.net/npm/vega-embed@6.15.1"></script>
+
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<h2>INFO 3402: Information Exposition</h3>
+					<p style="color:#CFB87C; font-weight:bold;">Weekly Assignment #12</p>
+					<p style="color:#565A5C">Week 15: April 19th</p>
+				</section>
+				
+				<section>
+					<section>
+						<h2>Visualization #1</h2>
+						<p>I will be using the <a href="https://github.com/vega/vega-datasets/blob/master/data/penguins.json" target="_blank" rel="noopener noreferrer">penguins.json</a> to make a scatterplot. </p>
+					</section>
+
+					<section>
+						<h2>Visualization #1</h2>
+						<div id="abc"></div>
+					<script type="text/javascript">
+						var spec = {
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "config": {
+  	"font": "Times New Roman",
+    "view": {
+      "continuousHeight": 400,
+      "continuousWidth": 600
+    },
+  },
+  "data": {
+    "url": "https://vega.github.io/vega-datasets/data/penguins.json"
+  },
+  "mark": "point",
+  "encoding": {
+    "x": {
+      "field": "Flipper Length (mm)",
+      "type": "quantitative",
+      "scale": {"zero": false},
+      "axis":{
+			"titleColor": "red",
+			"titleFontSize": 25,
+		},
+    },
+    "y": {
+      "field": "Body Mass (g)",
+      "type": "quantitative",
+      "scale": {"zero": false},
+      "axis":{
+			"titleColor": "red",
+			"titleFontSize": 25,
+		},
+    },
+    "color": {"field": "Species", "type": "nominal"},
+    "shape": {"field": "Species", "type": "nominal"}
+  }
+};
+						var opt = {"renderer": "canvas", "actions": false};  /* Options for the embedding */
+						vegaEmbed("#abc", spec, opt);
+					</script>
+					</section>
+
+					<section>
+						<h2>Interpretation of Visualization</h2>
+						<p><p> Gentoo penguins are the largest based on their flipper length and body mass. There is some overlap amongst some of the species of penguins, but Gentoo are the largest on average. Adelie and Chinstrap penguins share similar physical characteristics.</p></p>
+					</section>
+					<section>
+						<h2> How did we increase the font size and color of the text?</h2>
+						<p>For some introduction to creating vega visualizations, I have linked <a href="WA11.html"> a presentation</a> where you can find how to create a visualization with code blocks. The code block on the next slide will show how you can add on this and add styles for the fonts and axises.</p>
+					</section>
+
+					<section>
+						<pre><code class="html" data-trim data-line-numbers=6,7,8,15,16,17><script type="text/template">
+"encoding": {
+    	"x": {
+      		"field": "Flipper Length (mm)",
+      		"type": "quantitative",
+     		"scale": {"zero": false},
+      		"axis":{
+			"titleColor": "red",
+			"titleFontSize": 25,
+				},
+    			},
+    	"y": {
+      		"field": "Body Mass (g)",
+      		"type": "quantitative",
+     		"scale": {"zero": false},
+      		"axis":{
+			"titleColor": "red",
+			"titleFontSize": 25,
+				},
+			},
+						</script></code></pre>
+
+					</section>
+
+				</section>
+
+				<section>
+					<section>
+						<h2>In-class Exercise 2</h2>
+						<p>Use the "<a href="https://github.com/vega/vega-datasets/blob/master/data/crimea.json" target="_blank" rel="noopener noreferrer">crimea.json</a>" data to make a bar plot:</p>
+						<ul>
+							<li>x-axis: "date"</li>
+							<li>y-axis: "wounds"</li>
+						</ul>
+					</section>
+
+
+					<section>
+					<h2>In-class Exercise 2</h2>
+						<p>Your visualization goes here!</p>
+					<div id="crimea-bars"></div>
+						
+						<script type="text/javascript">
+						var spec = {
+							"width": 600,
+							"height": 400,
+							"data": {
+								"url": "https://vega.github.io/vega-datasets/data/crimea.json"
+							},
+							"mark": {
+								"type": "bar",
+								"color": "orange"
+							}, 
+							"encoding": {
+								"x": {
+									"field":"date",
+									"type":"temporal",
+									"axis":{
+										"labelFontSize":25
+									}
+								},
+								"y": {
+									"field":"wounds",
+									"type":"quantitative", 
+									"axis": {
+										"labelFontSize":25
+									}
+								},
+
+							}
+						};
+						var opt = {"renderer": "canvas", "actions": false};
+						vegaEmbed("#crimea-bars", spec, opt);
+						</script>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>In-class Exercise 3</h2>
+						<p>Use the "<a href="https://github.com/vega/vega-datasets/blob/master/data/penguins.json" target="_blank" rel="noopener noreferrer">penguins.json</a>" data to make a scatterplot:</p>
+						<ul>
+							<li>x-axis: "Flipper length (mm)"</li>
+							<li>y-axis: "Body Mass (g)"</li>
+							<li>color: "Species"</li>
+							<li>shape: "Sex"</li>
+						</ul>
+						<p>See <a href="https://vega.github.io/vega-lite/examples/point_color_with_shape.html" target="_blank" rel="noopener noreferrer">this example</a> for guidance.</p>
+					</section>
+					
+					<section>
+						<h2>In-class Exercise 3</h2>
+						<div id="lol"></div>
+					<script type="text/javascript">
+						var spec = {
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "config": {
+  	"font": "Times New Roman",
+    "view": {
+      "continuousHeight": 500,
+      "continuousWidth": 1000
+    },
+  },
+  "data": {
+    "url": "https://vega.github.io/vega-datasets/data/penguins.json"
+  },
+  "mark": "point",
+  "encoding": {
+    "x": {
+      "field": "Flipper Length (mm)",
+      "type": "quantitative",
+      "scale": {"zero": false},
+      "axis":{
+			"titleColor": "red",
+			"titleFontSize": 25,
+		},
+    },
+    "y": {
+      "field": "Body Mass (g)",
+      "type": "quantitative",
+      "scale": {"zero": false},
+      "axis":{
+			"titleColor": "red",
+			"titleFontSize": 25,
+		},
+    },
+    "color": {"field": "Species", "type": "nominal"},
+    "shape": {"field": "Species", "type": "nominal"}
+  }
+};
+						var opt = {"renderer": "canvas", "actions": false};  /* Options for the embedding */
+						vegaEmbed("#lol", spec, opt);
+					</script>
+					</section>
+				</section>
+
+			</div>
+		</div>
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/reveal.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/plugin/highlight/highlight.min.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+				slideNumber: 'h/v',
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealHighlight ]
+			});
+		</script>
+	</body>
+</html>
